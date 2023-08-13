@@ -4,9 +4,11 @@ Este é um repositório que contém exemplos e informações relacionadas ao liv
 
 ## Descrição
 
-O livro "Web Scraping com Python" de Ryan Mitchell () é uma referência valiosa para aqueles que desejam aprender a extrair informações da web de forma eficiente e eficaz. O livro aborda desde conceitos básicos até técnicas avançadas de web scraping, usando a linguagem Python como ferramenta principal.
+O livro "Web Scraping com Python" de Ryan Mitchell é uma referência valiosa para aqueles que desejam aprender a extrair informações da web de forma eficiente e eficaz. O livro aborda desde conceitos básicos até técnicas avançadas de web scraping, usando a linguagem Python como ferramenta principal.
 
 Neste repositório, você encontrará exemplos e códigos relacionados a diferentes capítulos do livro. Os exemplos foram organizados de acordo com os tópicos abordados no livro, permitindo que você acompanhe e pratique os conceitos à medida que avança na leitura.
+
+[Link para o PDF do livro](https://github.com/R1tzy/web-scraping-python/blob/main/livro/Web%20Scraping%20com%20Python%20-%202%C2%AA%20Edi%C3%A7%C3%A3o%20-%20Ryan%20Mitchell%20-%202019.pdf)
 
 ## Estrutura do Repositório
 
