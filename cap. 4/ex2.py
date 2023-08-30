@@ -1,6 +1,7 @@
 import requests
 from bs4 import BeautifulSoup
 
+
 class Content:
     """
     Classe-base comum para todos os artigos/páginas
@@ -9,15 +10,17 @@ class Content:
         self.url = url
         self.title = title
         self.body = body
-    
+
     def print(self):
         """
         Uma função flexível de exibição que controla a saída
         """
-        # clean_body = ' '.join(self.body.split())  # Substituir múltiplos espaços por um único espaço
+        # Substituir múltiplos espaços por um único espaço
+        # clean_body = ' '.join(self.body.split())
         print(f'URL: {self.url}')
         print(f'title: {self.title}')
-        print(f'Body:\n{self.body}\n{"-"*50}')  # Imprimir o corpo limpo e adicionar linha de separação
+        print(f'Body:\n{self.body}\n{"-"*50}')
+        # Imprimir o corpo limpo e adicionar linha de separação
 
 
 class Website:
@@ -29,7 +32,7 @@ class Website:
         self.url = url
         self.titleTag = titleTag
         self.bodyTag = bodyTag
-        
+
 
 class Crawler:
 
@@ -39,7 +42,7 @@ class Crawler:
         except requests.exceptions.RequestException:
             return None
         return BeautifulSoup(response.text, 'html.parser')
-    
+
     def safeGet(self, pageObj, selector):
         """
         Função utilitária usada para obter uma string de conteúdo de um
@@ -50,7 +53,7 @@ class Crawler:
         if selectedElems is not None and len(selectedElems) > 0:
             return "\n".join([elem.get_text() for elem in selectedElems])
         return ''
-    
+
     def parse(self, site, url):
         """
         Extrai conteúdo de um dado URL de página
@@ -62,13 +65,17 @@ class Crawler:
             if title != '' and body != '':
                 content = Content(url, title, body)
                 content.print()
-    
+
+
 crawler = Crawler()
 
 siteData = [
-    ["O'reilly Media", "https://www.oreilly.com/", 'h1', "div.content>span>div"],
-    ["Reuters", 'https://www.reuters.com/','h1', "article.ArticlePage-article-body-1xN5M"],
-    ['Brookings', 'https://www.brookings.edu/', "h1", "section#content>div>div"],
+    ["O'reilly Media", "https://www.oreilly.com/",
+     'h1', "div.content>span>div"],
+    ["Reuters", 'https://www.reuters.com/', 'h1',
+     "article.ArticlePage-article-body-1xN5M"],
+    ['Brookings', 'https://www.brookings.edu/',
+     "h1", "section#content>div>div"],
 ]
 
 website = []
@@ -76,8 +83,9 @@ website = []
 for row in siteData:
     website.append(Website(row[0], row[1], row[2], row[3]))
 
-crawler.parse(website[0], 'https://www.oreilly.com/library/view/learning-python-5th/9781449355722/')
-crawler.parse(website[1], 'https://www.reuters.com/article/us-usa-epa-pruitt-idUSKBN19W2D0')
-crawler.parse(website[2], 'https://www.brookings.edu/articles/idea-to-retire-old-methods-of-policy-education/')
-
-
+crawler.parse(website[0], 'https://www.oreilly.com/library/'
+              'view/learning-python-5th/9781449355722/')
+crawler.parse(website[1], 'https://www.reuters.com/article/'
+              'us-usa-epa-pruitt-idUSKBN19W2D0')
+crawler.parse(website[2], 'https://www.brookings.edu/articles/'
+              'idea-to-retire-old-methods-of-policy-education/')
