@@ -10,7 +10,7 @@ Neste repositório, você encontrará exemplos e códigos relacionados a diferen
 
 [Link para o PDF do livro](https://github.com/R1tzy/web-scraping-python/blob/main/livro/Web%20Scraping%20com%20Python%20-%202%C2%AA%20Edi%C3%A7%C3%A3o%20-%20Ryan%20Mitchell%20-%202019.pdf)
 
-Obs. Alguns códigos de exemplos do livro não funciona, pois a estrutura dos sites testados foram modificadas. Os códigos de exemplo deste repositório está adaptando esses exemplos para que funcione de acordo com o conteúdo transmitido.
+**OBS.** Alguns códigos de exemplos do livro não funciona, pois a estrutura dos sites testados foram modificadas. Os códigos de exemplo deste repositório está adaptando esses exemplos para que funcione de acordo com o conteúdo transmitido.
 
 ## Estrutura do Repositório
 
