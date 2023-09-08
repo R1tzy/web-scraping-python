@@ -15,7 +15,7 @@ class ArticleSpider(CrawlSpider):
         'https://en.wikipedia.org/wiki/Benevolent_dictator_for_life',
     ]
 
-    rules = (
+    rules = [
         Rule(
             LinkExtractor(allow='(/wiki/)((?!:).)*$'), callback='parse_item',
             follow=True, cb_kwargs={'is_article': True}
@@ -24,7 +24,7 @@ class ArticleSpider(CrawlSpider):
             LinkExtractor(allow='.*'), callback='parse_item',
             cb_kwargs={'is_article': False}
         )
-    )
+    ]
 
     def parse_item(self, response, is_article):
         print(response.url)

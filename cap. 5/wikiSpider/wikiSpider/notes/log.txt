@@ -1,0 +1,20 @@
+É possível ajustar facilmente o nível de logging acrescentando 
+no arquivo settings.py em seu projeto Scrapy:
+
+LOG_LEVEL = 'ERROR' -> apenas os logs de error serão mostrados
+
+O Scrapy usa uma hierarquia padrão de níveis de logging:
+• CRITICAL
+• ERROR
+• WARNING
+• DEBUG
+• INFO
+
+Para gerar os logs em um arquivo separado, em vez de enviá-los para o
+terminal, defina um arquivo de log usando a linha de comando:
+
+'scrapy crawl articles -s LOG_FILE=wiki.log'
+
+Cria um novo arquivo de log em seu diretório atual caso ainda não 
+exista e envia todos os logs para esse arquivo
+
